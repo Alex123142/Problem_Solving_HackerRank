@@ -1,0 +1,22 @@
+def findMedian(arr):
+    s_arr = sorted(arr)
+    l = len(arr)
+    if l%2 == 1:
+        return s_arr[l//2]
+    else:
+        med = (s_arr[l//2]+s_arr[l//2+1])/2
+        return (int(round(med,0)))
+    # Write your code here
+
+if __name__ == '__main__':
+    fptr = open(os.environ['OUTPUT_PATH'], 'w')
+
+    n = int(input().strip())
+
+    arr = list(map(int, input().rstrip().split()))
+
+    result = findMedian(arr)
+
+    fptr.write(str(result) + '\n')
+
+    fptr.close()
