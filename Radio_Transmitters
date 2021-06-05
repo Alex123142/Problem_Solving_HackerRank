@@ -1,0 +1,18 @@
+x_sorted = sorted(x)
+    transmitters = 0
+    current = []
+    i = 1
+    while i < len(x_sorted):
+        j = i
+        m = j-1
+        while j < len(x_sorted):
+            if x_sorted[j] - x_sorted[m] > k:
+                current.append(m)
+                break
+            elif x_sorted[j] - x_sorted[m] == k:
+                current.append(j)
+                break
+            else:
+                j += 1
+        i = current[-1] + 1   
+    return len(current)      
